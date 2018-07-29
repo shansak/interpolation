@@ -1,0 +1,44 @@
+
+#include<stdio.h>
+#include<conio.h>
+
+
+
+void inter(int a[],int n,int x)
+
+
+{
+    int start=0;
+    int end=n-1;
+
+    while(start<=end)
+    {
+
+     int pos;
+
+     pos=start+(end-start)/(a[end]-a[start])*(x-a[start]);
+
+
+     if(a[pos]==x)
+     {
+         printf("got it %d",pos);
+
+
+
+         return;
+     }
+
+     else if(x>a[pos])
+        start=pos+1;
+
+     else
+        end=pos-1;
+    }
+}
+
+void main()
+{
+    int a[]= {3,4,6,23,45,67,89};
+
+    inter(a,7,45);
+}
